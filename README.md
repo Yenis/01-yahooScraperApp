@@ -1,4 +1,6 @@
 Just some simple documentation on how I ran the application and how it's supposed to behave.
+IMPORTANT: Code in the practiceCode and productionCode folders isn't used by the program. It's included only for demonstration purposes, and as an example on how my code evolved during production.
+
 Everything begins with npm install, and npm run start... But wait until the message Database is Ready is returned, before going to localhost:3000
 ![after it says database ready](https://user-images.githubusercontent.com/22280179/143175011-f2763e10-784a-479f-987e-1b5050042701.png)
 
