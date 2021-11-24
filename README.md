@@ -1,5 +1,5 @@
 Just some simple documentation on how I ran the application and how it's supposed to behave.
-Everything begins with npm run start... But wait until the message Database is Ready is returned, before going to localhost:3000
+Everything begins with npm install, and npm run start... But wait until the message Database is Ready is returned, before going to localhost:3000
 ![after it says database ready](https://user-images.githubusercontent.com/22280179/143175011-f2763e10-784a-479f-987e-1b5050042701.png)
 
 The initial page is nothing special really, just provide the date, submit, and that sets the machine in motion.
