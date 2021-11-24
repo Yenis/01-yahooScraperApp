@@ -2,6 +2,7 @@ Just some simple documentation on how I ran the application and how it's suppose
 IMPORTANT: Code in the practiceCode and productionCode folders isn't used by the program. It's included only for demonstration purposes, and as an example on how my code evolved during production.
 
 Everything begins with npm install, and npm run start... But wait until the message Database is Ready is returned, before going to localhost:3000
+
 ![after it says database ready](https://user-images.githubusercontent.com/22280179/143175011-f2763e10-784a-479f-987e-1b5050042701.png)
 
 The initial page is nothing special really, just provide the date, click submit, and that sets the machine in motion...
@@ -18,5 +19,6 @@ And a copy of all that data is returned and updated in the table on localhost:30
 
 That was just a short demonstration, when everything is OK.
 A common problem is that Yahoo Tickers Page doesn't load or isn't available for any reason. If that happens, the program would close immediately.
+
 ![DENIED](https://user-images.githubusercontent.com/22280179/143175863-b82d772f-029a-40fd-b46f-aebf5ce6a706.png)
 
