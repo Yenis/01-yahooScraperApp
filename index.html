@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yahoo Finance Scraper App</title>
+        <link rel="stylesheet" href="../yahooscraper/style.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <h1>Yahoo Finance Scraper App</h1>
+
+        <form>
+            <label>Please Select a date for which to fetch rqeuired data.
+                <br>
+                (Avoid weekend days since there is no data to fetch. Also, reports for many of today's tickers may not be ready yet.)
+            </label>
+            <br>
+            <input id="datefield" type='date' name="date" value="2021-11-22" min='1899-01-01' max='2021-11-22'></input>
+            <script>
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1;
+                var yyyy = today.getFullYear();
+                
+                if (dd < 10) { dd = '0' + dd; }
+                if (mm < 10) { mm = '0' + mm; } 
+                    
+                today = yyyy + '-' + mm + '-' + dd;
+                document.getElementById("datefield").setAttribute("max", today );
+                document.getElementById("datefield").setAttribute("value", today );
+            </script>
+            <input type="submit" name ="submitDateValue" value="Submit Date">        
+        </form>
+
+        <div class="container">
+            <table id="tickersData">
+                <thead>
+                    <tr class="table-header">
+                        <th>Ticker ID</th>
+                        <th>Symbol</th>
+                        <th>Full Company Name</th>
+                        <th>Year Founded</th>
+                        <th>No.of Employees</th>
+                        <th>Headquarters Adress</th>
+                        <th>Close Price</th>
+                        <th>Open Price</th>
+                        <th>Daily High</th>
+                        <th>Market Cap</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="company0">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                <script>
+                document.querySelector('form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const form = document.querySelector('form');
+                        const data = Object.fromEntries(new FormData(form).entries());
+                        axios.post("/sendDate", data).then(res => {
+
+                            for (let t = 0; t < res.data.length; t++) {
+                                keysForTable = [];    
+                                keysForTable = [{
+                                    "Ticker_List_ID": res.data[t].companyID,
+                                    "Ticker_List_Symbol": res.data[t].companySymbol,
+                                    "Company_Name": res.data[t].companyNAME,
+                                    "Year_Founded": res.data[t].companyYEAR_FOUNDED,
+                                    "Company_HQ_Adress": res.data[t].companyHQ,
+                                    "Employees_Number": res.data[t].companyEmployNUMBER,
+                                    "Close_Price": res.data[t].companyCLOSE_PRICE,
+                                    "Open_Price": res.data[t].companyOPEN_PRICE,
+                                    "HIGH": res.data[t].companyHIGH,
+                                    "Market_Cap": res.data[t].companyMARKET_CAP,
+                                }];   
+
+                            let table = document.getElementById('tickersData');
+                                keysForTable.forEach(function(object) {
+                                    let tr = document.createElement('tr');
+                                    tr.innerHTML = `<td>${object.Ticker_List_ID}</td><td>${object.Ticker_List_Symbol}</td><td>${object.Company_Name}</td><td>${object.Year_Founded}</td><td>${object.Employees_Number}</td><td>${object.Company_HQ_Adress}</td><td>${object.Close_Price}</td><td>${object.Open_Price}</td><td>${object.HIGH}</td><td>${object.Market_Cap}</td>`;
+                                    table.appendChild(tr); 
+                                });
+                            };
+                        }
+                    );
+                });    
+                </script>
+            </table>
+        </div>
+    </body>
+</html>

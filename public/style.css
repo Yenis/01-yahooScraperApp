@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  background: linear-gradient(to right, #5f2c82, #49a09d);
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
+    color: #fff;
+    font-weight: 100;
+}
+
+label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    font-weight: 100;
+}
+
+form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+    font-weight: 100;
+}
+
+.container {
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+table {
+  width: 1280px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: #55608f;
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+
+
