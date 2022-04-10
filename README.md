@@ -3,6 +3,8 @@ The code may be messy and disjointed, but even so, this well may be the most imp
 
 For this reason, I'm not willing to make any updates to this project, but I would love to re-make it from scratch some day, now that I have much more knowledge and experience than I had while doing this originally.
 
+//-----------------------------------------//
+
 Original README:
 Just some simple documentation on how I ran the application and how it's supposed to behave.
 IMPORTANT: Code in the practiceCode and productionCode folders isn't used by the program. It's included only for demonstration purposes, and as an example on how my code evolved during production.
