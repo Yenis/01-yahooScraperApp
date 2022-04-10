@@ -6,6 +6,7 @@ For this reason, I'm not willing to make any updates to this project, but I woul
 //-----------------------------------------//
 
 Original README:
+
 Just some simple documentation on how I ran the application and how it's supposed to behave.
 IMPORTANT: Code in the practiceCode and productionCode folders isn't used by the program. It's included only for demonstration purposes, and as an example on how my code evolved during production.
 
